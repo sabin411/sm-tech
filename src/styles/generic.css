@@ -1,0 +1,12 @@
+.customContainer {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding-inline: 24px;
+}
+
+.center-child{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
