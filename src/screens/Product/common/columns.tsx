@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // packages
 import { Button, Tag, Typography, Image } from 'antd';
 import { DeleteFilled, EditFilled } from '@ant-design/icons';
@@ -13,8 +15,6 @@ import Ellipsis from '../../../components/Ellipsis';
 
 // types
 import { ProductDataProps } from '../types';
-import { units, category } from '../../../globals/constants';
-import { useState } from 'react';
 
 // columns for table
 export const columns = (

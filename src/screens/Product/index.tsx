@@ -9,7 +9,7 @@ import Spinner from '../../components/Spinner';
 import customModal from '../../components/Modal';
 
 // commons
-import ProductForm from './common/modal';
+import ProductForm from './common/form';
 import { columns } from './common/columns';
 
 // types
