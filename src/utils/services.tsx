@@ -1,4 +1,7 @@
 // This function takes file as input and uploades the file to cloudinary
+
+import { RcFile } from 'antd/es/upload';
+
 // 1. Upload to cloudinary
 async function handleUpload(file: File) {
   const cloud_name = 'dyw4adgjy';
@@ -19,31 +22,22 @@ async function handleUpload(file: File) {
 
 //This function is handle profile image
 export async function uploadToCloudinery(
-  event: React.ChangeEvent<HTMLInputElement>,
-  setImageLoading: React.Dispatch<React.SetStateAction<boolean>>,
-  previewProfileImage: (file: File | null) => void,
+  file: RcFile | undefined,
+  // setImageLoading?: React.Dispatch<React.SetStateAction<boolean>>,
+  // previewProfileImage?: (file: File | null) => void,
 ) {
-  const file: File | null =
-    event.target.files?.length && event.target.files[0]
-      ? event.target.files[0]
-      : null;
-  // if file is not null then only upload the the image
   if (file) {
     if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
-      event.target.value = '';
-      setImageLoading(false);
       return;
     }
 
     if (file.size > 4000000) {
-      event.target.value = '';
-      setImageLoading(false);
       return;
     }
 
-    // 1. Optimistic
-    previewProfileImage(file);
-    // 2. Upload to server
+    // // 1. Optimistic
+    // previewProfileImage(file);
+    // // 2. Upload to server
 
     // upload to cloudinary
     let data = await handleUpload(file);

@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // components
-import { ProductDataProps } from '../components/UserCard/types';
+import { ProductDataProps } from '../screens/Product/types';
 
 // globals
 import { BASE_URL } from '../globals/apiConstants';
